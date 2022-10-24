@@ -3047,7 +3047,7 @@
     (property "Value" "0.15uf" (id 1) (at 45.085 167.64 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm" (id 2) (at 46.355 167.3098 0)
+    (property "Footprint" "Capacitor_THT:C_Rect_L13.0mm_W4.0mm_P10.00mm_FKS3_FKP3_MKS4" (id 2) (at 46.355 167.3098 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 42.545 168.275 0)
@@ -3255,7 +3255,7 @@
     (uuid c6c6f9b2-9f87-4788-b46d-8e510305084d)
     (property "Reference" "C1" (id 0) (at 73.025 152.2562 90))
     (property "Value" "0.01uf" (id 1) (at 73.025 154.7931 90))
-    (property "Footprint" "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm" (id 2) (at 69.215 159.0802 0)
+    (property "Footprint" "Capacitor_THT:C_Rect_L10.0mm_W3.0mm_P7.50mm_MKS4" (id 2) (at 69.215 159.0802 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 73.025 158.115 0)
@@ -3415,7 +3415,7 @@
       (reference "A2") (unit 1) (value "Arduino_Nano_Every") (footprint "Module:Arduino_Nano")
     )
     (path "/c6c6f9b2-9f87-4788-b46d-8e510305084d"
-      (reference "C1") (unit 1) (value "0.01uf") (footprint "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm")
+      (reference "C1") (unit 1) (value "0.01uf") (footprint "Capacitor_THT:C_Rect_L10.0mm_W3.0mm_P7.50mm_MKS4")
     )
     (path "/4d71057e-54cb-4a1b-a5c4-4601df070c6b"
       (reference "C2") (unit 1) (value "0.47uf") (footprint "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm")
@@ -3424,7 +3424,7 @@
       (reference "C4") (unit 1) (value "330uf") (footprint "Capacitor_THT:CP_Radial_D8.0mm_P5.00mm")
     )
     (path "/8f363f0e-d267-4359-9c3d-fb4f788e37e4"
-      (reference "C5") (unit 1) (value "0.15uf") (footprint "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm")
+      (reference "C5") (unit 1) (value "0.15uf") (footprint "Capacitor_THT:C_Rect_L13.0mm_W4.0mm_P10.00mm_FKS3_FKP3_MKS4")
     )
     (path "/16f6c8c5-9c37-4ffd-8143-a0c82434fde0"
       (reference "D1") (unit 1) (value "1N34A") (footprint "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal")
