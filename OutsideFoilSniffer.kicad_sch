@@ -2706,7 +2706,7 @@
     (property "Value" "2N3904" (id 1) (at 28.8037 70.2822 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 28.575 70.485 0)
+    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline_Wide" (id 2) (at 28.575 70.485 0)
       (effects (font (size 1.27 1.27) italic) (justify left) hide)
     )
     (property "Datasheet" "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" (id 3) (at 33.655 68.58 0)
@@ -2948,7 +2948,7 @@
     (property "Value" "BC547" (id 1) (at 66.4464 169.9772 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 66.675 170.18 0)
+    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline_Wide" (id 2) (at 66.675 170.18 0)
       (effects (font (size 1.27 1.27) italic) (justify left) hide)
     )
     (property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" (id 3) (at 61.595 168.275 0)
@@ -3496,10 +3496,10 @@
       (reference "Measure1") (unit 1) (value "SW_Push") (footprint "Button_Switch_THT:SW_PUSH_6mm")
     )
     (path "/7e7de603-30a0-40ff-9e65-870b69f11c12"
-      (reference "Q1") (unit 1) (value "BC547") (footprint "Package_TO_SOT_THT:TO-92_Inline")
+      (reference "Q1") (unit 1) (value "BC547") (footprint "Package_TO_SOT_THT:TO-92_Inline_Wide")
     )
     (path "/3eb55c5a-2336-4e6d-9970-410cd2e1b309"
-      (reference "Q2") (unit 1) (value "2N3904") (footprint "Package_TO_SOT_THT:TO-92_Inline")
+      (reference "Q2") (unit 1) (value "2N3904") (footprint "Package_TO_SOT_THT:TO-92_Inline_Wide")
     )
     (path "/f08dd9aa-50c7-4a88-af5a-e184364f2582"
       (reference "R1") (unit 1) (value "470K") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
