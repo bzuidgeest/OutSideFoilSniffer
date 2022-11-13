@@ -82,13 +82,22 @@ void loop() {
     Serial.print("Value1: ");
     Serial.println(voltageA1, 4);
 
-    // Show the result.
-    if (voltageA0 > voltageA1) {
-      digitalWrite(pinLedLeft, LOW);    // D6 off - (left LED)
-      digitalWrite(pinLedRight, HIGH);  // D5 on - (right LED) to indicate Foil Side of Capacitor
-    } else if (voltageA0 < voltageA1) {
-      digitalWrite(pinLedLeft, HIGH);  // D6 on - (left LED) to indicate Foil Side of Capacitor
-      digitalWrite(pinLedRight, LOW);  // D5 off - (right LED)
+    if (voltageA0 != 0 && voltageA1 != 0) {
+      // Show the result.
+      if (voltageA0 > voltageA1) {
+        digitalWrite(pinLedLeft, LOW);    // D6 off - (left LED)
+        digitalWrite(pinLedRight, HIGH);  // D5 on - (right LED) to indicate Foil Side of Capacitor
+      } else if (voltageA0 < voltageA1) {
+        digitalWrite(pinLedLeft, HIGH);  // D6 on - (left LED) to indicate Foil Side of Capacitor
+        digitalWrite(pinLedRight, LOW);  // D5 off - (right LED)
+      } else if (voltageA0 == voltageA1) {
+        digitalWrite(pinLedLeft, HIGH);   // D6 off - (left LED)
+        digitalWrite(pinLedRight, HIGH);  // D5 on - (right LED) to indicate Foil Side of Capacitor
+      }
+    } else {
+      // Something measured as zero. Do we have good connections?
+      digitalWrite(pinLedLeft, LOW);   // D6 off - (left LED)
+      digitalWrite(pinLedRight, LOW);  // D5 on - (right LED) to indicate Foil Side of Capacitor
     }
 
     time = millis();
