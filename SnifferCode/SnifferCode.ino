@@ -10,10 +10,9 @@ int previous = LOW;
 long time = 0;
 long debounce = 500;  // default of 500 ms works well
 int stayON = 1000;    // keeps relay on (HIGH) for 1000 ms or 1 second faster switching might be acceptable.
-int voltageA0 = 0;
-int voltageA1 = 0;
+
 //int resetADC;  // A2 grounded to reset ADC
-float freq = 15.0;  // default square wave frequency in kHz for testing the capacitors
+float freq = 15.0;  // 15KHz default square wave frequency in kHz for testing the capacitors
 
 void setup() {
   pinMode(pinButton, INPUT);  // defines D10 as an INPUT to activate the button switch
@@ -32,19 +31,6 @@ void setup() {
 }
 
 void loop() {
-  /*
-  // testing code
-  digitalWrite(pinRelay, LOW);
-  digitalWrite(pinLedLeft, HIGH);
-  digitalWrite(pinLedRight, LOW);
-  Serial.println("A");
-  delay(stayON);
-  digitalWrite(pinLedLeft, LOW);
-  digitalWrite(pinLedRight, HIGH);
-  digitalWrite(pinRelay, HIGH);
-  Serial.println("B");
-  delay(stayON);
-  */
 
   stateButton = digitalRead(pinButton);
   if (stateButton == HIGH && previous == LOW & millis() - time > debounce) {
@@ -55,7 +41,6 @@ void loop() {
     // Clear leds
     digitalWrite(pinLedLeft, LOW);   // D6 off - (left LED)
     digitalWrite(pinLedRight, LOW);  // D5 on - (right LED)
-    delay(stayON);
 
     //turn on relais
     digitalWrite(pinRelay, HIGH);
@@ -64,8 +49,6 @@ void loop() {
     delay(stayON);
 
     // Clear ADC -> is this really needed?
-    //resetADC = analogRead(A2);  // A2 is grounded to clear the ADC before reading A0 & A1
-
     // Measure signal strength
     float voltageA0 = analogRead(A0) * (5.0 / 1023.0);
     Serial.print("Value0: ");
@@ -82,7 +65,7 @@ void loop() {
     Serial.print("Value1: ");
     Serial.println(voltageA1, 4);
 
-    if (voltageA0 != 0 && voltageA1 != 0) {
+    if (voltageA0 != 0.0 || voltageA1 != 0.0) {
       // Show the result.
       if (voltageA0 > voltageA1) {
         digitalWrite(pinLedLeft, LOW);    // D6 off - (left LED)
@@ -91,11 +74,12 @@ void loop() {
         digitalWrite(pinLedLeft, HIGH);  // D6 on - (left LED) to indicate Foil Side of Capacitor
         digitalWrite(pinLedRight, LOW);  // D5 off - (right LED)
       } else if (voltageA0 == voltageA1) {
-        digitalWrite(pinLedLeft, HIGH);   // D6 off - (left LED)
-        digitalWrite(pinLedRight, HIGH);  // D5 on - (right LED) to indicate Foil Side of Capacitor
+        digitalWrite(pinLedLeft, HIGH);   // D6 on - (left LED)
+        digitalWrite(pinLedRight, HIGH);  // D5 on - (right LED) 
       }
     } else {
       // Something measured as zero. Do we have good connections?
+      Serial.println("Both measurements are zero");
       digitalWrite(pinLedLeft, LOW);   // D6 off - (left LED)
       digitalWrite(pinLedRight, LOW);  // D5 on - (right LED) to indicate Foil Side of Capacitor
     }
